@@ -13,7 +13,7 @@ pip install sentence_transformers
 pip install gensim
 
 TODO download models
-Download pretrained fastText embedding vectors [https://dl.fbaipublicfiles.com/fasttext/vectors-english/wiki-news-300d-1M.vec.zip]
+Download pretrained fastText embedding vectors https://dl.fbaipublicfiles.com/fasttext/vectors-english/wiki-news-300d-1M.vec.zip
 ```
 
 # Train models
