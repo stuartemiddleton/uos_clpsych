@@ -9,7 +9,11 @@ This work is part of the UKRI TAS Hub SafeSpacesNLP project https://www.tas.ac.u
 
 ```
 TODO install pre-requisite libs
+pip install sentence_transformers
+pip install gensim
+
 TODO download models
+Download pretrained fastText embedding vectors https://dl.fbaipublicfiles.com/fasttext/vectors-english/wiki-news-300d-1M.vec.zip
 ```
 
 # Train models
