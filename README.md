@@ -21,22 +21,39 @@ This work is part of the UKRI TAS Hub SafeSpacesNLP project https://www.tas.ac.u
 TODO install pre-requisite libs
 pip install sentence_transformers
 pip install gensim
+pip install transformer
+pip install tensorflow
+pip install keras
 
-TODO download models
-Download pretrained fastText embedding vectors from "https://dl.fbaipublicfiles.com/fasttext/vectors-english/wiki-news-300d-1M.vec.zip"
+
 ```
+
+# Pretrained models
++ [fastText embedding vectors](https://dl.fbaipublicfiles.com/fasttext/vectors-english/wiki-news-300d-1M.vec.zip)
+
+# Preparing dataset
+The dataset provided by the CLPsych organiser cannot be shared. To get the dataset, you can communicate with the [CLPsych organiser](https://clpsych.org/). The dataset consist of two types a .csv and .json files. Each CSV file contains user posts (with time, user-id, posts labels) in a particular timeline and the filename as the timeline ID. Each JSON consist of user-id, timelines, and user-risk label and the filename as the user ID. We prepare a single CSV file containing both the informations (i.e. JSON and CSV files). The following structure of the CSV file is how we prepared to train our model.
+
+| Timeline_ID | User_ID | User_risk | Content | Post_ID | Post_label |
+
+- Timeline_ID: This is the timeline ID of the sequence of posts by a user
+- User_ID: The user id of the above timeline.
+- User_Risk: It is the user risk label shared with all the timelines of the user above.
+- Content: This is the total text merged with title and content for each user post.
+- Post_ID: It is the post id.
+- Post_label: It is the label of the post to indicate the moment of change.
+
+Save the training and testing sets as *training_dataset.csv* and *testing_dataset.csv* respectively.
 
 # Train models
+```
+python CLPsych-multitask_text.py --model 0 --load_classes dataset/CLPsych_dataset/teamdata/training_classes.pkl --training_dataset dataset/CLPsych_dataset/teamdata/training_dataset.csv --testing_dataset dataset/CLPsych_dataset/teamdata/testing_dataset.csv --result_dir dataset/CLPsych_dataset/teamdata/ --save_model 0
+```
+
+# Testing models
 
 ```
-TODO train models on example data (not real data as we cannot share it)
-```
-
-# Infer using models
-
-```
-TODO infer moment of change (task A)
-TODO infer user at risk (task B)
+python CLPsych-multitask_text_testing.py --model 0 --load_classes dataset/CLPsych_dataset/teamdata/training_classes.pkl --testing_dataset dataset/CLPsych_dataset/teamdata/testing_dataset.csv --result_dir dataset/CLPsych_dataset/teamdata/
 ```
 
 # Latest eval results
