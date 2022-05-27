@@ -1,9 +1,15 @@
 ## University of Southampton CLPsych 2022 software submission
 
 This work can be cited as:
-TODO
+Tayyaba Azim, Loitongbam Gyanendro Singh, Stuart E. Middleton,
+__*Detecting Moments of Change and Suicidal Risks in Longitudinal User Texts Using Multi-task Learning*__,
+CLPsych-2022 @ NAACL 2022
 
 This work is part of the UKRI TAS Hub SafeSpacesNLP project https://www.tas.ac.uk/safespacesnlp/ and supported by the Engineering and Physical Sciences Research Council (EP/V00784X/1)
+
+<h4>Proposed framework</h4>
+<img src="https://github.com/stuartemiddleton/uos_clpsych/blob/main/image/Pipeline.png" alt="Framework">
+<br>
 
 # Installation under Ubuntu 20.04LTS
 
