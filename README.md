@@ -32,7 +32,7 @@ pip install keras
 + [fastText embedding vectors](https://dl.fbaipublicfiles.com/fasttext/vectors-english/wiki-news-300d-1M.vec.zip)
 
 # Preparing dataset
-The dataset provided by the CLPsych organiser cannot be shared. To get the dataset, you can communicate with the [CLPsych organiser](https://clpsych.org/). The dataset consist of two types a .csv and .json files. Each CSV file contains user posts (with time, user-id, posts labels) in a particular timeline and the filename as the timeline ID. Each JSON consist of user-id, timelines, and user-risk label and the filename as the user ID. We prepare a single CSV file containing both the informations (i.e. JSON and CSV files). The following structure of the CSV file is how we prepared to train our model.
+The dataset provided by the CLPsych organiser cannot be shared. To get the dataset, you can communicate with the [CLPsych organiser](https://clpsych.org/). The dataset consist of two types a .csv and .json files. Each CSV file contains user posts (with time, user-id, posts labels) in a particular timeline and the filename as the timeline ID. Each JSON consist of user-id, timelines, and user-risk label and the filename as the user ID. We prepare a single CSV file containing both the informations (i.e. JSON and CSV files). The following is the structure how we prepared for the CSV file to train and test our model.
 
 | Timeline_ID | User_ID | User_risk | Content | Post_ID | Post_label |
 
@@ -49,6 +49,13 @@ Save the training and testing sets as *training_dataset.csv* and *testing_datase
 ```
 python CLPsych-multitask_text.py --model 0 --load_classes dataset/CLPsych_dataset/teamdata/training_classes.pkl --training_dataset dataset/CLPsych_dataset/teamdata/training_dataset.csv --testing_dataset dataset/CLPsych_dataset/teamdata/testing_dataset.csv --result_dir dataset/CLPsych_dataset/teamdata/ --save_model 0
 ```
++ *model*: Flag to define whether the model to be trained is with (1) or without (0) attention layer.
++ *load_classes*: Location to load or save the training class indices.
++ *training_dataset*: Location of the training dataset.
++ *testing_dataset*: Location of the testing dataset.
++ *result_dir*: Location to save the model predicted results.
++ *save_model*: Flag to save (1) or not (0).
+
 
 # Testing models
 
@@ -56,13 +63,25 @@ python CLPsych-multitask_text.py --model 0 --load_classes dataset/CLPsych_datase
 python CLPsych-multitask_text_testing.py --model 0 --load_classes dataset/CLPsych_dataset/teamdata/training_classes.pkl --testing_dataset dataset/CLPsych_dataset/teamdata/testing_dataset.csv --result_dir dataset/CLPsych_dataset/teamdata/
 ```
 
-# Latest eval results
+# Sentence embedding methods
+There are two types of sentence embedding methods considered for this study (Please refer to the paper for detail explaination):
++ *sent_emb*: fastText + SBERT 
++ *sent_score_emb*: fastText + SBERT + Task-specific scores
 
-TODO results in a table from CLPsych 2022 systems paper
+# Evaluation models
++ *Multitask*: model using *sent_emb* 
++ *Multitask-score*: model using *sent_score_emb* 
++ *Multitask-attn*: model with attention layer using *sent_emb*
++ *Multitask-attn-score*: model with attention layer using *sent_score_emb*. 
 
-| Model | Precision | Recall | F1 |
-| ----- | --------- | ------ | -- |
-| Model 1 | 0.97 | 1.0 | 0.98 |
-| Model 2 | 1.0 | 1.0 | 1.0 |
-| Model 3 | 1.0 | 1.0 | 1.0 |
+# Testing Shared Task 2022 eval result
 
+
+|               |          Post-level Metrics    |||   Coverage-based Metrics  	|| Timeline-level Metrics (Macro average)  |
+|               |          (Macro average) 		 |||   (Macro average) 		  	|| Window-1 || Window-2 || Window-3  |
+|               |          ------------- 		 |||   ------------- 		  	|| ------------- || ------------- || -------------  |
+| 				|	P  | R | F   | P | R  | P | R  | P | R  |
+| ------------- | :-----------: | -------------: | :----------: | :----------: | --------------- |
+Multitask-attn-score	|0.689	|0.625	|0.649	|0.506	|0.503	|0.676	|0.652	|0.693	|0.670	|0.708	|0.686	|
+Multitask-score	|0.677	|0.595	|0.625	|0.492	|0.467	|0.662	|0.605	|0.681	|0.622	|0.695	|0.632	|
+Multitask	|0.680	|0.579	|0.607	|0.521	|0.441	|0.674	|0.592	|0.695	|0.608	|0.723	|0.623	|
