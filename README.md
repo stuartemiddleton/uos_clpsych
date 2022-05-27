@@ -77,9 +77,9 @@ There are two types of sentence embedding methods considered for this study (Ple
 # Testing Shared Task 2022 eval result
 
 
-|               |          Post-level Metrics    |||   Coverage-based Metrics  	|| Timeline-level Metrics (Macro average)  |
-|               |          (Macro average) 		 |||   (Macro average) 		  	|| Window-1 || Window-2 || Window-3  |
-|               |          ------------- 		 |||   ------------- 		  	|| ------------- || ------------- || -------------  |
+|               |          Post-level Metrics    ||   Coverage-based Metrics  	|| Timeline-level Metrics (Macro average)  |
+|               |          (Macro average) 		 ||   (Macro average) 		  	|| Window-1 || Window-2 || Window-3  |
+|               |          ------------- 		 ||   ------------- 		  	|| ------------- || ------------- || -------------  |
 | 				|	P  | R | F   | P | R  | P | R  | P | R  |
 | ------------- | :-----------: | -------------: | :----------: | :----------: | --------------- |
 Multitask-attn-score	|0.689	|0.625	|0.649	|0.506	|0.503	|0.676	|0.652	|0.693	|0.670	|0.708	|0.686	|
