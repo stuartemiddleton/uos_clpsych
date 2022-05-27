@@ -76,12 +76,9 @@ There are two types of sentence embedding methods considered for this study (Ple
 
 # Testing Shared Task 2022 eval result
 
+| Model | Precision | Recall | F1 |
+| ----- | --------- | ------ | -- |
+| Model 1 | 0.97 | 1.0 | 0.98 |
+| Model 2 | 1.0 | 1.0 | 1.0 |
+| Model 3 | 1.0 | 1.0 | 1.0 |
 
-|               |          Post-level Metrics    ||   Coverage-based Metrics  	|| Timeline-level Metrics (Macro average)  |
-|               |          (Macro average) 		 ||   (Macro average) 		  	|| Window-1 || Window-2 || Window-3  |
-|               |          ------------- 		 ||   ------------- 		  	|| ------------- || ------------- || -------------  |
-| 				|	P  | R | F   | P | R  | P | R  | P | R  |
-| ------------- | :-----------: | -------------: | :----------: | :----------: | --------------- |
-Multitask-attn-score	|0.689	|0.625	|0.649	|0.506	|0.503	|0.676	|0.652	|0.693	|0.670	|0.708	|0.686	|
-Multitask-score	|0.677	|0.595	|0.625	|0.492	|0.467	|0.662	|0.605	|0.681	|0.622	|0.695	|0.632	|
-Multitask	|0.680	|0.579	|0.607	|0.521	|0.441	|0.674	|0.592	|0.695	|0.608	|0.723	|0.623	|
