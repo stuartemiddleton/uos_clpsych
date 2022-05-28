@@ -54,7 +54,7 @@ python CLPsych-multitask_text.py --model 0 --load_classes dataset/CLPsych_datase
 + *training_dataset*: Location of the training dataset.
 + *testing_dataset*: Location of the testing dataset.
 + *result_dir*: Location to save the model predicted results.
-+ *save_model*: Flag to save (1) or not (0).
++ *save_model*: Flag to save model yes (1) or not (0).
 
 
 # Testing models
@@ -82,6 +82,7 @@ There are two types of sentence embedding methods considered for this study (Ple
 | Model 1 | 0.97 | 1.0 | 0.98 |
 | Model 2 | 1.0 | 1.0 | 1.0 |
 | Model 3 | 1.0 | 1.0 | 1.0 |
+
 [Suicidal Risk Levels]
 | Model | Precision | Recall | F1 |
 | ----- | --------- | ------ | -- |
