@@ -76,14 +76,16 @@ There are two types of sentence embedding methods considered for this study (Ple
 
 # Testing Shared Task 2022 eval result
 
-| .center[Moments of Change] ||
+| Moments of Change ||
 | Model | Precision | Recall | F1 |
 | ----- | --------- | ------ | -- |
 | Model 1 | 0.97 | 1.0 | 0.98 |
 | Model 2 | 1.0 | 1.0 | 1.0 |
 | Model 3 | 1.0 | 1.0 | 1.0 |
 
-| .center[Suicidal Risk Levels] ||
+
+
+Suicidal Risk Levels
 | Model | Precision | Recall | F1 |
 | ----- | --------- | ------ | -- |
 | Model 1 | 0.97 | 1.0 | 0.98 |
