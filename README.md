@@ -74,7 +74,7 @@ There are two types of sentence embedding methods considered for this study (Ple
 + *Multitask-attn*: model with attention layer using *sent_emb*
 + *Multitask-attn-score*: model with attention layer using *sent_score_emb*. 
 
-# Testing Shared Task 2022 eval result
+# Validation set Shared Task 2022 eval result
 
 Moments of Change 
 | Model | Precision | Recall | F1 |
