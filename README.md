@@ -96,3 +96,19 @@ Suicidal Risk Levels
 | *Multitask-attn-score*	| 0.415	| 0.397	| 0.382	| 
 
 
+# Test set Shared Task 2022 eval result
+
+Post-level metrics (Task-A)
+| Model | Precision | Recall | F1 |
+| ----- | --------- | ------ | -- |
+| *Multitask*	| 0.680	| 0.579	| 0.649	| 
+| *Multitask-score*	| 0.677	| 0.595	| 0.625	| 
+| *Multitask-attn-score*	| 0.680	| 0.579	| 0.607	| 
+
+
+Task-B
+| Model | Precision | Recall | F1 |
+| ----- | --------- | ------ | -- |
+| *Multitask-attn-score*	| 0.618	| 0.427	| 0.451	| 
+
+
