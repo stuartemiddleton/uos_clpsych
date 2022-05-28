@@ -79,10 +79,10 @@ There are two types of sentence embedding methods considered for this study (Ple
 Moments of Change 
 | Model | Precision | Recall | F1 |
 | ----- | --------- | ------ | -- |
-| Multitask	| 0.582	| 0.717	| 0.629	| 
-| Multitask-attn	| 0.663	| 0.697	| 0.676	| 
-| Multitask-score-emb	| 0.680	| 0.760	| 0.713	| 
-| Multitask-attn-score-emb	| 0.674	| 0.800	| 0.724	| 
+| *Multitask*	| 0.582	| 0.717	| 0.629	| 
+| *Multitask-attn*	| 0.663	| 0.697	| 0.676	| 
+| *Multitask-score*	| 0.680	| 0.760	| 0.713	| 
+| *Multitask-attn-score*	| 0.674	| 0.800	| 0.724	| 
 
 
 
@@ -90,9 +90,9 @@ Moments of Change
 Suicidal Risk Levels
 | Model | Precision | Recall | F1 |
 | ----- | --------- | ------ | -- |
-| Multitask	| 0.352	| 0.327	| 0.335	| 
-| Multitask-attn	|  0.408	| 0.378	| 0.388	| 
-| Multitask-score-emb	|  0.355	| 0.331	| 0.334	| 
-| Multitask-attn-score-emb	| 0.415	| 0.397	| 0.382	| 
+| *Multitask*	| 0.352	| 0.327	| 0.335	| 
+| *Multitask-attn*	|  0.408	| 0.378	| 0.388	| 
+| *Multitask-score*	|  0.355	| 0.331	| 0.334	| 
+| *Multitask-attn-score*	| 0.415	| 0.397	| 0.382	| 
 
 
