@@ -76,19 +76,23 @@ There are two types of sentence embedding methods considered for this study (Ple
 
 # Testing Shared Task 2022 eval result
 
-| Moments of Change ||
+Moments of Change 
 | Model | Precision | Recall | F1 |
 | ----- | --------- | ------ | -- |
-| Model 1 | 0.97 | 1.0 | 0.98 |
-| Model 2 | 1.0 | 1.0 | 1.0 |
-| Model 3 | 1.0 | 1.0 | 1.0 |
+| Multitask	| 0.582	| 0.717	| 0.629	| 
+| Multitask-attn	| 0.663	| 0.697	| 0.676	| 
+| Multitask-score-emb	| 0.680	| 0.760	| 0.713	| 
+| Multitask-attn-score-emb	| 0.674	| 0.800	| 0.724	| 
+
 
 
 
 Suicidal Risk Levels
 | Model | Precision | Recall | F1 |
 | ----- | --------- | ------ | -- |
-| Model 1 | 0.97 | 1.0 | 0.98 |
-| Model 2 | 1.0 | 1.0 | 1.0 |
-| Model 3 | 1.0 | 1.0 | 1.0 |
+| Multitask	| 0.352	| 0.327	| 0.335	| 
+| Multitask-attn	|  0.408	| 0.378	| 0.388	| 
+| Multitask-score-emb	|  0.355	| 0.331	| 0.334	| 
+| Multitask-attn-score-emb	| 0.415	| 0.397	| 0.382	| 
+
 
