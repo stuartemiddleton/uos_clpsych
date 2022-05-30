@@ -33,7 +33,7 @@ import argparse
 
 def parse_args():
     parser = argparse.ArgumentParser(description='Evaluate the models')
-    parser.add_argument('--model', help='Model type- 0: without_attention, 1: with_attention')
+    parser.add_argument('--attention_layer', help='0: without_attention, 1: with_attention')
     parser.add_argument('--save_model', help='Save model? 0: No, 1: Yes')
     parser.add_argument('--load_classes', help='Saved class index file location')
     parser.add_argument('--training_dataset', help='Testing dataset file location')
@@ -45,7 +45,7 @@ def parse_args():
 
 args = parse_args()
 
-selection = args.model
+selection = args.attention_layer
 save_model = args.save_model
 loaded_classes = args.load_classes          
 training_dataset = args.training_dataset     
