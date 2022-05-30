@@ -35,7 +35,7 @@ import argparse
 
 def parse_args():
     parser = argparse.ArgumentParser(description='Evaluate the models')
-    parser.add_argument('--model', help='Model type- 0: without_attention, 1: with_attention')
+    parser.add_argument('--attention_layer', help='0: without_attention, 1: with_attention')
     parser.add_argument('--load_classes', help='Saved class index file location')
     parser.add_argument('--testing_dataset', help='Testing dataset file location')
     parser.add_argument('--result_dir', help='Store result directory')
@@ -48,10 +48,10 @@ def parse_args():
 args = parse_args()
 
 
-selection = args.model
-loaded_classes = args.load_classes          #'dataset/CLPsych_dataset/teamdata/training_classes.pkl'
-testing_dataset = args.testing_dataset      #"dataset/CLPsych_dataset/teamdata/testing_dataset_new.csv"
-result_save_loc =  args.result_dir          #'dataset/CLPsych_dataset/teamdata/'
+selection = args.attention_layer
+loaded_classes = args.load_classes          
+testing_dataset = args.testing_dataset      
+result_save_loc =  args.result_dir          
 
 
 if selection == '0':
