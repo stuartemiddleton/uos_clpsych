@@ -32,7 +32,7 @@ pip install keras
 + [fastText embedding vectors](https://dl.fbaipublicfiles.com/fasttext/vectors-english/wiki-news-300d-1M.vec.zip)
 
 ## Preparing dataset
-The dataset provided by the CLPsych organiser cannot be shared. To get the dataset, you can communicate with the [CLPsych organiser](https://clpsych.org/). The dataset consist of two types a .csv and .json files. Each CSV file contains user posts (with time, user-id, posts labels) in a particular timeline and the filename as the timeline ID. Each JSON consist of user-id, timelines, and user-risk label and the filename as the user ID. We prepare a single CSV file containing both the informations (i.e. JSON and CSV files). The following is the structure how we prepared for the CSV file to train and test our model.
+The dataset provided by the CLPsych organiser cannot be shared. To get the dataset, you can communicate with the [CLPsych organiser](https://clpsych.org/). The dataset consist of two types of files: *file-type-A*.csv and *file-type-B*.json. Each *file-type-A*.csv contains information about user posts (with time, user-id, posts labels) in a particular timeline and the filename (*file-type-A*) is the timeline ID. Each *file-type-B*.json consist of user-id, timelines, and user-risk label and the filename (*file-type-B*) is the user ID. We merge all the files and prepare a single CSV file containing both the informations in *file-type-A* and *file-type-B*. The following relational table structure shows how we prepared for the single CSV file merging all the information of *file-type-A* and *file-type-B*.
 
 | Timeline_ID | User_ID | User_risk | Content | Post_ID | Post_label |
 
