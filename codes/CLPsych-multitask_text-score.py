@@ -125,7 +125,6 @@ def TwitterRobertbaseEncoding(text):
    Final_score=np.concatenate((emoji_score,emotion_score,hate_score,irony_score,offensive_score,sentiment_score), axis=None)
    return Final_score
 
-
 class PostGetter(object):
     def __init__(self, data):
         self.data = data
@@ -193,7 +192,6 @@ else:
     f_out = open(loaded_classes,'wb')
     pickle.dump((tag2idx,risk2idx),f_out)
     f_out.close()
-
 
 
 from keras.preprocessing.sequence import pad_sequences
