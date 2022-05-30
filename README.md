@@ -49,9 +49,9 @@ Save the training and testing sets as *training_dataset.csv* and *testing_datase
 
 ## Train models
 ```
-python CLPsych-multitask_text.py --model 0 --load_classes <training_classes_index>.pkl --training_dataset <training_dataset>.csv --testing_dataset <testing_dataset>.csv --result_dir <save_directory> --save_model 0
+python CLPsych-multitask_text.py --attention_layer 0 --load_classes <training_classes_index>.pkl --training_dataset <training_dataset>.csv --testing_dataset <testing_dataset>.csv --result_dir <save_directory> --save_model 0
 ```
-+ *model*: Flag to define whether the model to be trained is with (1) or without (0) attention layer.
++ *attention_layer*: Flag to define whether the model to be trained is with (1) or without (0) attention layer.
 + *load_classes*: Location to load or save the training class indices.
 + *training_dataset*: Location of the training dataset.
 + *testing_dataset*: Location of the testing dataset.
@@ -62,7 +62,7 @@ python CLPsych-multitask_text.py --model 0 --load_classes <training_classes_inde
 ## Testing models
 
 ```
-python CLPsych-multitask_text_testing.py --model 0 --load_classes <training_classes_index>.pkl --testing_dataset <testing_dataset>.csv --result_dir <save_directory>
+python CLPsych-multitask_text_testing.py --attention_layer 0 --load_classes <training_classes_index>.pkl --testing_dataset <testing_dataset>.csv --result_dir <save_directory>
 ```
 
 ## Sentence embedding methods
