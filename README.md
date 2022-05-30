@@ -24,6 +24,8 @@ pip install transformer
 pip install tensorflow
 pip install keras
 ```
+*The experiment was done on Dell Precision 5820 Tower Workstation with Nvidia Quadro RTX 6000 24 GB GPU using Nvidia CUDA Toolkit 11.5*
+
 
 ## Pretrained models
 + [fastText embedding vectors](https://dl.fbaipublicfiles.com/fasttext/vectors-english/wiki-news-300d-1M.vec.zip)
