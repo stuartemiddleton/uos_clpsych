@@ -23,8 +23,6 @@ pip install gensim
 pip install transformer
 pip install tensorflow
 pip install keras
-
-
 ```
 
 ## Pretrained models
