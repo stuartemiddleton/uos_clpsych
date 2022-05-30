@@ -34,7 +34,9 @@ pip install keras
 ## Preparing dataset
 The dataset provided by the CLPsych organiser cannot be shared. To get the dataset, you can communicate with the [CLPsych organiser](https://clpsych.org/). The dataset consist of two types of files: *file-type-A*.csv and *file-type-B*.json. Each *file-type-A*.csv contains information about user posts (with time, user-id, posts labels) in a particular timeline and the filename (*file-type-A*) is the timeline ID. Each *file-type-B*.json consist of user-id, timelines, and user-risk label and the filename (*file-type-B*) is the user ID. We merge all the files and prepare a single CSV file containing both the informations in *file-type-A* and *file-type-B*. The following relational table structure shows how we prepared for the single CSV file merging all the information of *file-type-A* and *file-type-B*.
 
+'''
 | Timeline_ID | User_ID | User_risk | Content | Post_ID | Post_label |
+'''
 
 - Timeline_ID: This is the timeline ID of the sequence of posts by a user
 - User_ID: The user id of the above timeline.
