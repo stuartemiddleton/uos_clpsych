@@ -49,7 +49,7 @@ Save the training and testing sets as *training_dataset.csv* and *testing_datase
 
 ## Train models
 ```
-python CLPsych-multitask_text.py --model 0 --load_classes dataset/CLPsych_dataset/teamdata/training_classes.pkl --training_dataset dataset/CLPsych_dataset/teamdata/training_dataset.csv --testing_dataset dataset/CLPsych_dataset/teamdata/testing_dataset.csv --result_dir dataset/CLPsych_dataset/teamdata/ --save_model 0
+python CLPsych-multitask_text.py --model 0 --load_classes <training_classes_index>.pkl --training_dataset <training_dataset>.csv --testing_dataset <testing_dataset>.csv --result_dir <save_directory> --save_model 0
 ```
 + *model*: Flag to define whether the model to be trained is with (1) or without (0) attention layer.
 + *load_classes*: Location to load or save the training class indices.
@@ -62,7 +62,7 @@ python CLPsych-multitask_text.py --model 0 --load_classes dataset/CLPsych_datase
 ## Testing models
 
 ```
-python CLPsych-multitask_text_testing.py --model 0 --load_classes dataset/CLPsych_dataset/teamdata/training_classes.pkl --testing_dataset dataset/CLPsych_dataset/teamdata/testing_dataset.csv --result_dir dataset/CLPsych_dataset/teamdata/
+python CLPsych-multitask_text_testing.py --model 0 --load_classes <training_classes_index>.pkl --testing_dataset <testing_dataset>.csv --result_dir <save_directory>
 ```
 
 ## Sentence embedding methods
@@ -85,7 +85,6 @@ There are two types of sentence embedding methods considered for this study (Ple
 | *Multitask-attn*	| 0.663	| 0.697	| 0.676	| 
 | *Multitask-score*	| 0.680	| 0.760	| 0.713	| 
 | *Multitask-attn-score*	| 0.674	| 0.800	| 0.724	| 
-
 
 
 
