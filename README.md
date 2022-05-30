@@ -16,7 +16,8 @@ This work is part of the UKRI TAS Hub SafeSpacesNLP project https://www.tas.ac.u
 <br>
 
 ## Installation under Ubuntu 20.04LTS 
-*(Install pre-requisite libraries)*
++ *The experiment was done on Dell Precision 5820 Tower Workstation with Nvidia Quadro RTX 6000 24 GB GPU using Nvidia CUDA Toolkit 11.5*
++ *Install the following pre-requisite libraries*
 ```
 pip install sentence_transformers
 pip install gensim
@@ -24,7 +25,7 @@ pip install transformer
 pip install tensorflow
 pip install keras
 ```
-*The experiment was done on Dell Precision 5820 Tower Workstation with Nvidia Quadro RTX 6000 24 GB GPU using Nvidia CUDA Toolkit 11.5*
+
 
 
 ## Pretrained models
