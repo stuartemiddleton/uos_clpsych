@@ -38,10 +38,10 @@ args = parse_args()
 
 selection = args.model
 save_model = args.save_model
-loaded_classes = args.load_classes          #'dataset/CLPsych_dataset/teamdata/training_classes.pkl'
-training_dataset = args.training_dataset      #"dataset/CLPsych_dataset/teamdata/training_dataset.csv"
-testing_dataset = args.testing_dataset      #"dataset/CLPsych_dataset/teamdata/testing_dataset.csv"
-result_save_loc =  args.result_dir          #'dataset/CLPsych_dataset/teamdata/'
+loaded_classes = args.load_classes          
+training_dataset = args.training_dataset    
+testing_dataset = args.testing_dataset      
+result_save_loc =  args.result_dir          
 
 if selection == '0':
     model_type = 'without_attention'
