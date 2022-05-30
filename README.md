@@ -38,12 +38,12 @@ The dataset provided by the CLPsych organiser cannot be shared. To get the datas
 | Timeline_ID | User_ID | User_risk | Content | Post_ID | Post_label |
 ```
 
-- Timeline_ID: This is the timeline ID of the sequence of posts by a user
-- User_ID: The user id of the above timeline.
-- User_Risk: It is the user risk label shared with all the timelines of the user above.
-- Content: This is the total text merged with title and content for each user post.
-- Post_ID: It is the post id.
-- Post_label: It is the label of the post to indicate the moment of change.
+- *Timeline_ID*: This is the timeline ID of the sequence of posts by a user
+- *User_ID*: The user id of the above timeline.
+- *User_Risk*: It is the user risk label shared with all the timelines of the user above.
+- *Content*: This is the total text merged with title and content for each user post.
+- *Post_ID*: It is the post id.
+- *Post_label*: It is the label of the post to indicate the moment of change.
 
 Save the training and testing sets as *training_dataset.csv* and *testing_dataset.csv* respectively.
 
@@ -78,7 +78,7 @@ There are two types of sentence embedding methods considered for this study (Ple
 
 ## Shared Task 2022 Validation set eval result
 
-Moments of Change 
+**Moments of Change**
 | Model | Precision | Recall | F1 |
 | ----- | --------- | ------ | -- |
 | *Multitask*	| 0.582	| 0.717	| 0.629	| 
@@ -89,7 +89,7 @@ Moments of Change
 
 
 
-Suicidal Risk Levels
+**Suicidal Risk Levels**
 | Model | Precision | Recall | F1 |
 | ----- | --------- | ------ | -- |
 | *Multitask*	| 0.352	| 0.327	| 0.335	| 
@@ -100,7 +100,7 @@ Suicidal Risk Levels
 
 ## Shared Task 2022 Test set eval result
 
-Post-level metrics (Task-A)
+**Post-level metrics (Task-A)**
 | Model | Precision | Recall | F1 |
 | ----- | --------- | ------ | -- |
 | *Multitask*	| 0.680	| 0.579	| 0.649	| 
@@ -108,7 +108,7 @@ Post-level metrics (Task-A)
 | *Multitask-attn-score*	| 0.680	| 0.579	| 0.607	| 
 
 
-Task-B
+**User-level metrics (Task-B)**
 | Model | Precision | Recall | F1 |
 | ----- | --------- | ------ | -- |
 | *Multitask-attn-score*	| 0.618	| 0.427	| 0.451	| 
