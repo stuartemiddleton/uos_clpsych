@@ -15,10 +15,9 @@ This work is part of the UKRI TAS Hub SafeSpacesNLP project https://www.tas.ac.u
 <img src="https://github.com/stuartemiddleton/uos_clpsych/blob/main/image/Pipeline.png" alt="Framework">
 <br>
 
-## Installation under Ubuntu 20.04LTS
-
+## Installation under Ubuntu 20.04LTS 
+*(Install pre-requisite libraries)*
 ```
-TODO install pre-requisite libs
 pip install sentence_transformers
 pip install gensim
 pip install transformer
