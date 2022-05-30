@@ -1,4 +1,4 @@
-## University of Southampton CLPsych 2022 software submission
+# University of Southampton CLPsych 2022 software submission
 
 This work can be cited as:
 Tayyaba Azim, Loitongbam Gyanendro Singh, Stuart E. Middleton,
@@ -15,7 +15,7 @@ This work is part of the UKRI TAS Hub SafeSpacesNLP project https://www.tas.ac.u
 <img src="https://github.com/stuartemiddleton/uos_clpsych/blob/main/image/Pipeline.png" alt="Framework">
 <br>
 
-# Installation under Ubuntu 20.04LTS
+## Installation under Ubuntu 20.04LTS
 
 ```
 TODO install pre-requisite libs
@@ -28,10 +28,10 @@ pip install keras
 
 ```
 
-# Pretrained models
+## Pretrained models
 + [fastText embedding vectors](https://dl.fbaipublicfiles.com/fasttext/vectors-english/wiki-news-300d-1M.vec.zip)
 
-# Preparing dataset
+## Preparing dataset
 The dataset provided by the CLPsych organiser cannot be shared. To get the dataset, you can communicate with the [CLPsych organiser](https://clpsych.org/). The dataset consist of two types a .csv and .json files. Each CSV file contains user posts (with time, user-id, posts labels) in a particular timeline and the filename as the timeline ID. Each JSON consist of user-id, timelines, and user-risk label and the filename as the user ID. We prepare a single CSV file containing both the informations (i.e. JSON and CSV files). The following is the structure how we prepared for the CSV file to train and test our model.
 
 | Timeline_ID | User_ID | User_risk | Content | Post_ID | Post_label |
@@ -45,7 +45,7 @@ The dataset provided by the CLPsych organiser cannot be shared. To get the datas
 
 Save the training and testing sets as *training_dataset.csv* and *testing_dataset.csv* respectively.
 
-# Train models
+## Train models
 ```
 python CLPsych-multitask_text.py --model 0 --load_classes dataset/CLPsych_dataset/teamdata/training_classes.pkl --training_dataset dataset/CLPsych_dataset/teamdata/training_dataset.csv --testing_dataset dataset/CLPsych_dataset/teamdata/testing_dataset.csv --result_dir dataset/CLPsych_dataset/teamdata/ --save_model 0
 ```
@@ -57,24 +57,24 @@ python CLPsych-multitask_text.py --model 0 --load_classes dataset/CLPsych_datase
 + *save_model*: Flag to save model yes (1) or not (0).
 
 
-# Testing models
+## Testing models
 
 ```
 python CLPsych-multitask_text_testing.py --model 0 --load_classes dataset/CLPsych_dataset/teamdata/training_classes.pkl --testing_dataset dataset/CLPsych_dataset/teamdata/testing_dataset.csv --result_dir dataset/CLPsych_dataset/teamdata/
 ```
 
-# Sentence embedding methods
+## Sentence embedding methods
 There are two types of sentence embedding methods considered for this study (Please refer to the paper for detail explaination):
 + *sent_emb*: fastText + SBERT 
 + *sent_score_emb*: fastText + SBERT + Task-specific scores
 
-# Evaluation models
+## Evaluation models
 + *Multitask*: model using *sent_emb* 
 + *Multitask-score*: model using *sent_score_emb* 
 + *Multitask-attn*: model with attention layer using *sent_emb*
 + *Multitask-attn-score*: model with attention layer using *sent_score_emb*. 
 
-# Validation set Shared Task 2022 eval result
+## Shared Task 2022 Validation set eval result
 
 Moments of Change 
 | Model | Precision | Recall | F1 |
@@ -96,7 +96,7 @@ Suicidal Risk Levels
 | *Multitask-attn-score*	| 0.415	| 0.397	| 0.382	| 
 
 
-# Test set Shared Task 2022 eval result
+## Shared Task 2022 Test set eval result
 
 Post-level metrics (Task-A)
 | Model | Precision | Recall | F1 |
