@@ -47,10 +47,10 @@ args = parse_args()
 
 selection = args.model
 save_model = args.save_model
-loaded_classes = args.load_classes          #'dataset/CLPsych_dataset/teamdata/training_classes.pkl'
-training_dataset = args.training_dataset      #"dataset/CLPsych_dataset/teamdata/testing_dataset.csv"
-testing_dataset = args.testing_dataset      #"dataset/CLPsych_dataset/teamdata/testing_dataset.csv"
-result_save_loc =  args.result_dir          #'dataset/CLPsych_dataset/teamdata/'
+loaded_classes = args.load_classes          
+training_dataset = args.training_dataset     
+testing_dataset = args.testing_dataset      
+result_save_loc =  args.result_dir        
 
 if selection == '0':
     model_type = 'without_attention'
@@ -70,6 +70,7 @@ def remove_stopwords(sentence):
         if w not in stops:
             wordsFiltered.append(w)
     return wordsFiltered
+    
 # Preprocess text (username and link placeholders)
 def preprocess(text):
     new_text = []
@@ -91,7 +92,6 @@ def get_sentence_emb(text):
     return sentence_emb
 
 def get_task_specific_scores(task,text):
-    ##task='emoji' # change this for emoji & remove any existing directory with similar name to run the task suceessfully.
     MODEL = f"cardiffnlp/twitter-roberta-base-{task}"
     tokenizer = AutoTokenizer.from_pretrained(MODEL)
     # PT
@@ -104,7 +104,7 @@ def get_task_specific_scores(task,text):
     return scores    
 
 def TwitterRobertbaseEncoding(text):
-   task='emoji' # change this for emoji & remove any existing directory with similar name to run the task suceessfully.
+   task='emoji' 
    emoji_score = get_task_specific_scores(task,text)
    
    task='emotion'
@@ -220,7 +220,7 @@ if file_exists:
     f_out.close()
 
 else:
-    # To create the input matrix takes about 3 hours so loading the save matrix instead 
+    # Creating the input matrix takes about 3 hours so save matrix after running for future use 
     XX = []
     post_count=0
     for sess in X:
