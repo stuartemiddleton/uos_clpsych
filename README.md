@@ -1,4 +1,4 @@
-# University of Southampton CLPsych 2022 software submission
+# University of Southampton CLPsych 2022 Software Submission
 
 This work can be cited as:
 Tayyaba Azim, Loitongbam Gyanendro Singh, Stuart E. Middleton,
