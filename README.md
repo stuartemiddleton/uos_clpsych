@@ -122,8 +122,7 @@ There are two types of sentence embedding methods considered for this study (Ple
 | *Multitask-score*	|  0.355	| 0.331	| 0.334	| 
 | *Multitask-attn-score*	| 0.415	| 0.397	| 0.382	| 
 
-
-## Shared Task 2022 Test Set result
+## 8.2 Shared Task 2022 Test Set result
 
 **Post-level metrics (Task-A)**
 | Model | Precision | Recall | F1 |
