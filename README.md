@@ -1,4 +1,4 @@
-# University of Southampton CLPsych 2022 Software Submission
+# University of Southampton CLPsych 2022 Shared Task Submission
 This work is part of the UKRI TAS Hub SafeSpacesNLP project https://www.tas.ac.uk/safespacesnlp/ and supported by the Engineering and Physical Sciences Research Council (EP/V00784X/1). If you use any of the resources in this repository, please cite it as:
 
 Tayyaba Azim, Loitongbam Gyanendro Singh, Stuart E. Middleton,
