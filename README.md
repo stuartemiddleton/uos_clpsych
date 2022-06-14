@@ -8,7 +8,7 @@ CLPsych-2022 @ NAACL 2022
 @inproceedings{DBLP:conf/acl-clpsych/Azim2022,
   author    = {Tayyaba Azim and
                Loitongbam Gyanendro Singh and 
-               Stuart E. Middleton,},
+               Stuart E. Middleton},
   editor    = { },
   title     = {Detecting Moments of Change and Suicidal Risks in Longitudinal User Texts Using Multi-task Learning},
   booktitle = {Proceedings of the Eight Workshop on Computational Linguistics and
