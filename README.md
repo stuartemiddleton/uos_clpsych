@@ -24,7 +24,7 @@ CLPsych-2022 @ NAACL, July 10–15, 2022.
   bibsource = {dblp computer science bibliography, https://dblp.org}
   
   ```
-## 1.Abstract
+## 1.Summary
 This work describes the classification system proposed for the Computational Linguistics and Clinical Psychology (CLPsych) Shared Task 2022. We propose the use of multitask learning approach with a bidirectional long-short term memory (Bi-LSTM) model for predicting changes in user's mood (Task A) and their suicidal risk level (Task B). The two classification tasks have been solved independently or in an augmented way previously, where the output of one task is leveraged for learning another task, however this work proposes an 'all-in-one' framework that jointly learns the related mental health tasks. Our experimental results (ranked top for task A) suggest that the proposed multi-task framework outperforms the alternative single-task frameworks submitted to the challenge and evaluated via the timeline based and coverage based performance metrics shared by the organisers. We also assess the potential of using various types of feature embedding schemes that could prove useful in initialising the Bi-LSTM model for better multitask learning in the mental health domain.
 
 
@@ -33,7 +33,7 @@ This work describes the classification system proposed for the Computational Lin
 <h4>Proposed framework</h4>
 <img src="https://github.com/stuartemiddleton/uos_clpsych/blob/main/image/Pipeline.png" alt="Framework">
 <br>
-## 2 License
+## 2. License
 ### 2.1 Data Set: 
 The CLPsych data set is proprietary and not shared here. Please contact the competition organisers to get its copy.
 ### 2.2 Software: 
@@ -44,7 +44,7 @@ The CLPsych data set is proprietary and not shared here. Please contact the comp
  Project : SafeSpacesNLP
 License: This dataset is made available under the Public Domain Dedication and License v1.0 whose full text can be found at: http://www.opendatacommons.org/licenses/pddl/1.0/ It was downloaded using pushshift API. Re-use of this data is subject to Reddit API terms.
 
-## 3 Installation Requirements Under Ubuntu 20.04LTS 
+## 3.Installation Requirements Under Ubuntu 20.04LTS 
 + *The experiment was done on Dell Precision 5820 Tower Workstation with Nvidia Quadro RTX 6000 24 GB GPU using Nvidia CUDA Toolkit 11.5*
 + *Install the following pre-requisite libraries*
 ```
@@ -54,10 +54,10 @@ pip install transformer
 pip install tensorflow
 pip install keras
 ```
-## 4 Pretrained Models
+## 4. Pretrained Models
 + [fastText embedding vectors](https://dl.fbaipublicfiles.com/fasttext/vectors-english/wiki-news-300d-1M.vec.zip)
 
-## 5 Preparing Dataset
+## 5. Preparing Dataset
 The dataset provided by the CLPsych organiser cannot be shared. To get the dataset, you can communicate with the [CLPsych organiser](https://clpsych.org/). The dataset consist of two types of files: *file-type-A*.csv and *file-type-B*.json. Each *file-type-A*.csv contains information about user posts (with time, user-id, posts labels) in a particular timeline and the filename (*file-type-A*) is the timeline ID. Each *file-type-B*.json consist of user-id, timelines, and user-risk label and the filename (*file-type-B*) is the user ID. We merge all the files and prepare a single CSV file containing both the informations in *file-type-A* and *file-type-B*. The following relational table structure shows how we prepared for the single CSV file merging all the information of *file-type-A* and *file-type-B*.
 
 ```
@@ -73,7 +73,7 @@ The dataset provided by the CLPsych organiser cannot be shared. To get the datas
 
 Save the training and testing sets as *training_dataset.csv* and *testing_dataset.csv* respectively.
 
-## 6Train models
+##  6. Train Models
 ```
 python CLPsych-multitask_text.py --attention_layer 0 --load_classes <training_classes_index>.pkl --training_dataset <training_dataset>.csv --testing_dataset <testing_dataset>.csv --result_dir <save_directory> --save_model 0
 ```
@@ -85,7 +85,7 @@ python CLPsych-multitask_text.py --attention_layer 0 --load_classes <training_cl
 + *save_model*: Flag to save model yes (1) or not (0).
 
 
-## 7 Testing models
+## 7. Testing Models
 
 ```
 python CLPsych-multitask_text_testing.py --attention_layer 0 --load_classes <training_classes_index>.pkl --testing_dataset <testing_dataset>.csv --result_dir <save_directory>
@@ -96,7 +96,7 @@ There are two types of sentence embedding methods considered for this study (Ple
 + *sent_emb*: fastText + SBERT 
 + *sent_score_emb*: fastText + SBERT + Task-specific scores
 
-## 8 Classification models
+## 8.Classification models
 + *Multitask*: model using *sent_emb* 
 + *Multitask-score*: model using *sent_score_emb* 
 + *Multitask-attn*: model with attention layer using *sent_emb*
