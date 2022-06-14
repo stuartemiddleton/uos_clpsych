@@ -30,13 +30,13 @@ This work describes the classification system proposed for the Computational Lin
 
 
 
-<h4>Proposed framework</h4>
+## 2. Proposed Framework
 <img src="https://github.com/stuartemiddleton/uos_clpsych/blob/main/image/Pipeline.png" alt="Framework">
 <br>
-## 2. License
-### 2.1 Data Set: 
+## 3. License
+### 3.1 Data Set: 
 The CLPsych data set is proprietary and not shared here. Please contact the competition organisers to get its copy.
-### 2.2 Software: 
+### 3.2 Software: 
  (c) Copyright University of Southampton, 2022,
  Highfield, University Road, Southampton SO17 1BJ
  Created By : Tayyaba Azim, Gyanendro Loitongbam
@@ -44,7 +44,7 @@ The CLPsych data set is proprietary and not shared here. Please contact the comp
  Project : SafeSpacesNLP
 License: This dataset is made available under the Public Domain Dedication and License v1.0 whose full text can be found at: http://www.opendatacommons.org/licenses/pddl/1.0/ It was downloaded using pushshift API. Re-use of this data is subject to Reddit API terms.
 
-## 3.Installation Requirements Under Ubuntu 20.04LTS 
+## 4.Installation Requirements Under Ubuntu 20.04LTS 
 + *The experiment was done on Dell Precision 5820 Tower Workstation with Nvidia Quadro RTX 6000 24 GB GPU using Nvidia CUDA Toolkit 11.5*
 + *Install the following pre-requisite libraries*
 ```
@@ -54,7 +54,7 @@ pip install transformer
 pip install tensorflow
 pip install keras
 ```
-## 4. Pretrained Models
+## 4.1 Pretrained Models
 + [fastText embedding vectors](https://dl.fbaipublicfiles.com/fasttext/vectors-english/wiki-news-300d-1M.vec.zip)
 
 ## 5. Preparing Dataset
