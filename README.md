@@ -37,15 +37,15 @@ CLPsych-2022 @ NAACL, July 10–15, 2022.
 ### Data Set: 
 The CLPsych data set is proprietary and not shared here. Please contact the competition organisers at clpsych2022-organizers@googlegroups.com to get a copy of its distribution.
 ### Software: 
- (c) Copyright University of Southampton, 2022,
+ © Copyright University of Southampton, 2022,
  Highfield, University Road, Southampton SO17 1BJ
  Created By : Tayyaba Azim, Gyanendro Loitongbam
  Created Date : 2022/05/26
  Project : SafeSpacesNLP
 
 ## Installation Requirements Under Ubuntu 20.04LTS 
-+ *The experiment was done on Dell Precision 5820 Tower Workstation with Nvidia Quadro RTX 6000 24 GB GPU using Nvidia CUDA Toolkit 11.5*
-+ *Install the following pre-requisite libraries*
++ The experiments were run on Dell Precision 5820 Tower Workstation with Nvidia Quadro RTX 6000 24 GB GPU using Nvidia CUDA Toolkit 11.5.
++ Install the following pre-requisite libraries
 ```
 pip install sentence_transformers
 pip install gensim
@@ -125,7 +125,7 @@ There are two types of sentence embedding methods considered for this study (Ple
 
 ## Shared Task 2022 Test Set Result
 
-**Post-level metrics (Task-A)**
+**Post-level metrics (Task-A)**   (table)
 | Model | Precision | Recall | F1 |
 | ----- | --------- | ------ | -- |
 | *Multitask*	| 0.680	| 0.579	| 0.649	| 
