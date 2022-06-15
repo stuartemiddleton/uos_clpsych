@@ -24,7 +24,7 @@ CLPsych-2022 @ NAACL, July 10–15, 2022.
   bibsource = {dblp computer science bibliography, https://dblp.org}
   
   ```
-## 1.Detecting Moments of Change and Suicidal Risks in Longitudinal User Texts Using Multi-task Learning
+## 1. Detecting Moments of Change and Suicidal Risks in Longitudinal User Texts Using Multi-task Learning
 This work describes the classification system proposed for the Computational Linguistics and Clinical Psychology (CLPsych) Shared Task 2022. We propose the use of multitask learning approach with a bidirectional long-short term memory (Bi-LSTM) model for predicting changes in user's mood (Task A) and their suicidal risk level (Task B). The two classification tasks have been solved independently or in an augmented way previously, where the output of one task is leveraged for learning another task, however this work proposes an 'all-in-one' framework that jointly learns the related mental health tasks. Our experimental results (ranked top for task A) suggest that the proposed multi-task framework outperforms the alternative single-task frameworks submitted to the challenge and evaluated via the timeline based and coverage based performance metrics shared by the organisers. We also assess the potential of using various types of feature embedding schemes that could prove useful in initialising the Bi-LSTM model for better multitask learning in the mental health domain.
 
 
@@ -55,11 +55,13 @@ pip install transformer
 pip install tensorflow
 pip install keras
 ```
-## 4.1 Pretrained Models
+## 4.1 Pretrained Models Required
 + [fastText embedding vectors](https://dl.fbaipublicfiles.com/fasttext/vectors-english/wiki-news-300d-1M.vec.zip)
 
-## 5. Preparing Dataset
-The dataset provided by the CLPsych organiser cannot be shared. To get the dataset, you can communicate with the [CLPsych organiser](https://clpsych.org/). The dataset consist of two types of files: *file-type-A*.csv and *file-type-B*.json. Each *file-type-A*.csv contains information about user posts (with time, user-id, posts labels) in a particular timeline and the filename (*file-type-A*) is the timeline ID. Each *file-type-B*.json consist of user-id, timelines, and user-risk label and the filename (*file-type-B*) is the user ID. We merge all the files and prepare a single CSV file containing both the informations in *file-type-A* and *file-type-B*. The following relational table structure shows how we prepared for the single CSV file merging all the information of *file-type-A* and *file-type-B*.
+## 5. Preparing Data Set
+The dataset provided by the CLPsych organiser cannot be shared. To get the dataset, please communicate with the [CLPsych organisers](https://clpsych.org/). 
+
+The dataset consists of two types of files: *file-type-A*.csv and *file-type-B*.json. Each *file-type-A*.csv contains information about user posts (with time, user-id, posts labels) in a particular timeline and the filename (*file-type-A*) is the timeline ID. Each *file-type-B*.json consist of user-id, timelines, and user-risk label and the filename (*file-type-B*) is the user ID. We merge all the files and prepare a single CSV file containing both the informations in *file-type-A* and *file-type-B*. The following relational table structure shows how we prepared for the single CSV file merging all the information of *file-type-A* and *file-type-B*.
 
 ```
 | Timeline_ID | User_ID | User_risk | Content | Post_ID | Post_label |
@@ -97,7 +99,7 @@ There are two types of sentence embedding methods considered for this study (Ple
 + *sent_emb*: fastText + SBERT 
 + *sent_score_emb*: fastText + SBERT + Task-specific scores
 
-## 8.Classification models
+## 8. Classification Models
 + *Multitask*: model using *sent_emb* 
 + *Multitask-score*: model using *sent_score_emb* 
 + *Multitask-attn*: model with attention layer using *sent_emb*
@@ -123,7 +125,7 @@ There are two types of sentence embedding methods considered for this study (Ple
 | *Multitask-score*	|  0.355	| 0.331	| 0.334	| 
 | *Multitask-attn-score*	| 0.415	| 0.397	| 0.382	| 
 
-## 8.2 Shared Task 2022 Test Set result
+## 8.2 Shared Task 2022 Test Set Result
 
 **Post-level metrics (Task-A)**
 | Model | Precision | Recall | F1 |
