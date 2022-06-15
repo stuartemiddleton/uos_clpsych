@@ -78,6 +78,11 @@ We merged all the files and prepare a single CSV file containing both the inform
 
 Save the training and testing sets as *training_dataset.csv* and *testing_dataset.csv* respectively.
 
+## Sentence Embedding Methods
+There are two types of sentence embedding methods considered for this study (Please refer to the paper for detail explaination):
++ *sent_emb*: fastText + SBERT 
++ *sent_score_emb*: fastText + SBERT + Task-specific scores
++ 
 ##  Train Models
 ```
 python CLPsych-multitask_text.py --attention_layer 0 --load_classes <training_classes_index>.pkl --training_dataset <training_dataset>.csv --testing_dataset <testing_dataset>.csv --result_dir <save_directory> --save_model 0
@@ -96,10 +101,6 @@ python CLPsych-multitask_text.py --attention_layer 0 --load_classes <training_cl
 python CLPsych-multitask_text_testing.py --attention_layer 0 --load_classes <training_classes_index>.pkl --testing_dataset <testing_dataset>.csv --result_dir <save_directory>
 ```
 
-## Sentence Embedding Methods
-There are two types of sentence embedding methods considered for this study (Please refer to the paper for detail explaination):
-+ *sent_emb*: fastText + SBERT 
-+ *sent_score_emb*: fastText + SBERT + Task-specific scores
 
 ##  Classification Models
 + *Multitask*: model using *sent_emb* 
