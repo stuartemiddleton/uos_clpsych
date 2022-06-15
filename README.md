@@ -46,7 +46,7 @@ The CLPsych data set is proprietary and not shared here. Please contact the comp
 + The experiments were run on Dell Precision 5820 Tower Workstation with Nvidia Quadro RTX 6000 24 GB GPU using Nvidia CUDA Toolkit 11.5.
 + Install the following pre-requisite libraries:
 ```
-pip install sentence_transformers
+pip install -U sentence-transformers
 pip install gensim
 pip install transformer
 pip install tensorflow
