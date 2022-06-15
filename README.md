@@ -56,9 +56,14 @@ pip install keras
 + [fastText embedding vectors](https://dl.fbaipublicfiles.com/fasttext/vectors-english/wiki-news-300d-1M.vec.zip)
 
 ## Preparing Data Set
-The dataset provided by the CLPsych organiser cannot be shared. To get the dataset, please communicate with the [CLPsych organisers](https://clpsych.org/). 
+The CLPsych 2022 dataset consists of two types of files: *file-type-A*.csv and *file-type-B*.json. 
 
-The dataset consists of two types of files: *file-type-A*.csv and *file-type-B*.json. Each *file-type-A*.csv contains information about user posts (with time, user-id, posts labels) in a particular timeline and the filename (*file-type-A*) is the timeline ID. Each *file-type-B*.json consist of user-id, timelines, and user-risk label and the filename (*file-type-B*) is the user ID. We merge all the files and prepare a single CSV file containing both the informations in *file-type-A* and *file-type-B*. The following relational table structure shows how we prepared for the single CSV file merging all the information of *file-type-A* and *file-type-B*.
+Each *file-type-A*.csv contains information about user posts (with time, user-id, posts labels) in a particular timeline and 
+the filename (*file-type-A*) is the timeline ID. 
+
+Each *file-type-B*.json consists of user-id, timelines, and user-risk label and the filename (*file-type-B*) is the user ID. 
+
+We merged all the files and prepare a single CSV file containing both the informations in *file-type-A* and *file-type-B*. The following relational table structure shows how we prepared for the single CSV file merging all the information of *file-type-A* and *file-type-B*.
 
 ```
 | Timeline_ID | User_ID | User_risk | Content | Post_ID | Post_label |
