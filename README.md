@@ -44,7 +44,6 @@ The CLPsych data set is proprietary and not shared here. Please contact the comp
  Created By : Tayyaba Azim, Gyanendro Loitongbam
  Created Date : 2022/05/26
  Project : SafeSpacesNLP
-License: This dataset is made available under the Public Domain Dedication and License v1.0 whose full text can be found at: http://www.opendatacommons.org/licenses/pddl/1.0/ It was downloaded using pushshift API. Re-use of this data is subject to Reddit API terms.
 
 ## 4.Installation Requirements Under Ubuntu 20.04LTS 
 + *The experiment was done on Dell Precision 5820 Tower Workstation with Nvidia Quadro RTX 6000 24 GB GPU using Nvidia CUDA Toolkit 11.5*
