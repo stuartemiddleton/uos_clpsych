@@ -38,10 +38,11 @@ CLPsych-2022 @ NAACL, July 10–15, 2022.
 The CLPsych data set is proprietary and not shared here. Please contact the competition organisers at clpsych2022-organizers@googlegroups.com to get a copy of its distribution.
 ### Software: 
  © Copyright University of Southampton, 2022,
- Highfield, University Road, Southampton SO17 1BJ
+ Highfield, University Road, Southampton SO17 1BJ.
+ 
  Created By : Tayyaba Azim, Gyanendro Loitongbam
  Created Date : 2022/05/26
- Project : SafeSpacesNLP
+ Project : SafeSpacesNLP (https://www.tas.ac.uk/safespacesnlp/)
 
 ## Installation Requirements Under Ubuntu 20.04LTS 
 + The experiments were run on Dell Precision 5820 Tower Workstation with Nvidia Quadro RTX 6000 24 GB GPU using Nvidia CUDA Toolkit 11.5.
