@@ -24,7 +24,7 @@ CLPsych-2022 @ NAACL, July 10–15, 2022.
   bibsource = {dblp computer science bibliography, https://dblp.org}
   
   ```
-## 1.Summary
+## 1.Detecting Moments of Change and Suicidal Risks in Longitudinal User Texts Using Multi-task Learning
 This work describes the classification system proposed for the Computational Linguistics and Clinical Psychology (CLPsych) Shared Task 2022. We propose the use of multitask learning approach with a bidirectional long-short term memory (Bi-LSTM) model for predicting changes in user's mood (Task A) and their suicidal risk level (Task B). The two classification tasks have been solved independently or in an augmented way previously, where the output of one task is leveraged for learning another task, however this work proposes an 'all-in-one' framework that jointly learns the related mental health tasks. Our experimental results (ranked top for task A) suggest that the proposed multi-task framework outperforms the alternative single-task frameworks submitted to the challenge and evaluated via the timeline based and coverage based performance metrics shared by the organisers. We also assess the potential of using various types of feature embedding schemes that could prove useful in initialising the Bi-LSTM model for better multitask learning in the mental health domain.
 
 
