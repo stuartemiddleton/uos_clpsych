@@ -33,9 +33,11 @@ This work describes the classification system proposed for the Computational Lin
 ## 2. Proposed Framework
 <img src="https://github.com/stuartemiddleton/uos_clpsych/blob/main/image/Pipeline.png" alt="Framework">
 <br>
+
 ## 3. License
+
 ### 3.1 Data Set: 
-The CLPsych data set is proprietary and not shared here. Please contact the competition organisers to get its copy.
+The CLPsych data set is proprietary and not shared here. Please contact the competition organisers at clpsych2022-organizers@googlegroups.com to get a copy of its distribution.
 ### 3.2 Software: 
  (c) Copyright University of Southampton, 2022,
  Highfield, University Road, Southampton SO17 1BJ
