@@ -96,7 +96,7 @@ python CLPsych-multitask_text.py --attention_layer 0 --load_classes <training_cl
 python CLPsych-multitask_text_testing.py --attention_layer 0 --load_classes <training_classes_index>.pkl --testing_dataset <testing_dataset>.csv --result_dir <save_directory>
 ```
 
-## Sentence embedding methods
+## Sentence Embedding Methods
 There are two types of sentence embedding methods considered for this study (Please refer to the paper for detail explaination):
 + *sent_emb*: fastText + SBERT 
 + *sent_score_emb*: fastText + SBERT + Task-specific scores
