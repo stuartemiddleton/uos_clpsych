@@ -48,7 +48,7 @@ The CLPsych data set is proprietary and not shared here. Please contact the comp
 ```
 pip install -U sentence-transformers
 pip install gensim
-pip install transformer
+pip install transformers
 pip install tensorflow
 pip install keras
 ```
@@ -82,7 +82,7 @@ Save the training and testing sets as *training_dataset.csv* and *testing_datase
 There are two types of sentence embedding methods considered for this study (Please refer to the paper for detail explaination):
 + *sent_emb*: fastText + SBERT 
 + *sent_score_emb*: fastText + SBERT + Task-specific scores
-+ 
+
 ##  Training Models
 ```
 python CLPsych-multitask_text.py --attention_layer 0 --load_classes <training_classes_index>.pkl --training_dataset <training_dataset>.csv --testing_dataset <testing_dataset>.csv --result_dir <save_directory> --save_model 0
