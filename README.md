@@ -56,6 +56,7 @@ Package                       Version
 ----------------------------- --------------------
 gensim                        4.0.1
 keras                         2.9.0
+sentence-transformers         2.2.0
 tensorflow                    2.9.1
 transformers                  4.20.1
 
@@ -110,7 +111,7 @@ nohup python codes/CLPsych-multitask_text.py --attention_layer 0 --load_classes 
 # train Multitask-attn
 nohup python codes/CLPsych-multitask_text.py --attention_layer 1 --load_classes dataset/training_classes_index.pkl --training_dataset dataset/training_dataset.csv --testing_dataset dataset/testing_dataset.csv --result_dir results/ --save_model 1 > train_stdout.txt &
 
-# train Multitask-score
+# train Multitask-score (use nohup to run in background as training can take a few days)
 nohup python codes/CLPsych-multitask_text-score.py --attention_layer 0 --load_classes dataset/training_classes_index.pkl --training_dataset dataset/training_dataset.csv --testing_dataset dataset/testing_dataset.csv --result_dir results/ --save_model 1 > train_stdout.txt &
 
 # train Multitask-attn-score
@@ -174,7 +175,7 @@ py codes/evaluate.py results/training_dataset_multitask-score-taskb-with_attenti
 | *Multitask-attn-score*	| 0.415	| 0.397	| 0.382	| 
 
 ## Evaluating models on Shared Task 2022 Test Set Results (run by CLPsych-2022 organisers on our behalf using hidden test labels)
-**Post-level metrics (Task-A)**   (table)
+**Task A: Moments of Change**
 | Model | Precision | Recall | F1 |
 | ----- | --------- | ------ | -- |
 | *Multitask*	| 0.680	| 0.579	| 0.649	| 
@@ -182,7 +183,7 @@ py codes/evaluate.py results/training_dataset_multitask-score-taskb-with_attenti
 | *Multitask-attn-score*	| 0.680	| 0.579	| 0.607	| 
 
 
-**User-level metrics (Task-B)**
+**Task B: Suicidal Risk Levels**
 | Model | Precision | Recall | F1 |
 | ----- | --------- | ------ | -- |
 | *Multitask-attn-score*	| 0.618	| 0.427	| 0.451	| 
