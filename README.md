@@ -43,7 +43,7 @@ The CLPsych data set is proprietary and not shared here. Please contact the comp
  - Project : SafeSpacesNLP (https://www.tas.ac.uk/safespacesnlp/)
 
 ## Installation Requirements Under Ubuntu 20.04LTS 
-+ The experiments were run on Dell Precision 5820 Tower Workstation with Nvidia Quadro RTX 6000 24 GB GPU using Nvidia CUDA Toolkit 11.5.
++ The experiments were run on Dell Precision 5820 Tower Workstation with Nvidia Quadro RTX 6000 24 GB GPU using Nvidia CUDA Toolkit 11.7 and Ubunti 20.04 LTS.
 + Install the following pre-requisite libraries:
 ```
 pip install -U sentence-transformers
@@ -51,8 +51,6 @@ pip install gensim
 pip install transformers
 pip install tensorflow
 pip install keras
-
-# tested Ubunti 20.04 LTS, cuda-11.7 and the below python libraries
 
 Package                       Version
 ----------------------------- --------------------
