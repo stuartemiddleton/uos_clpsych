@@ -48,22 +48,39 @@ The CLPsych data set is proprietary and not shared here. Please contact the comp
 ```
 pip install -U sentence-transformers
 pip install gensim
-pip install transformer
+pip install transformers
 pip install tensorflow
 pip install keras
+
+# tested Ubunti 20.04 LTS, cuda-11.7 and the below python libraries
+
+Package                       Version
+----------------------------- --------------------
+gensim                        4.0.1
+keras                         2.9.0
+tensorflow                    2.9.1
+transformers                  4.20.1
+
 ```
 ## Pretrained Models Required
-+ [fastText embedding vectors](https://dl.fbaipublicfiles.com/fasttext/vectors-english/wiki-news-300d-1M.vec.zip)
++ download [fastText embedding vectors](https://dl.fbaipublicfiles.com/fasttext/vectors-english/wiki-news-300d-1M.vec.zip)
+```
+cd <uos_clpsych_dir>
+mkdir dataset
+cd <uos_clpsych_dir>/dataset
+wget -O wiki-news-300d-1M.vec.zip https://dl.fbaipublicfiles.com/fasttext/vectors-english/wiki-news-300d-1M.vec.zip
+unzip wiki-news-300d-1M.vec.zip
+```
 
 ## Preparing Data Set
-The CLPsych 2022 dataset consists of two types of files: *file-type-A*.csv and *file-type-B*.json. 
+The CLPsych 2022 dataset consists of two types of tab delimited CSV files: *timeline_ID*.tsv and *train_users*.json. 
 
-Each *file-type-A*.csv contains information about user posts (with time, user-id, posts labels) in a particular timeline and 
-the filename (*file-type-A*) is the timeline ID. 
+Each *timeline_ID*.tsv contains information about user posts (postid, date, label, title, content) in a particular timeline and 
+the filename (*timeline_ID*) is the timeline ID. 
 
-Each *file-type-B*.json consists of user-id, timelines, and user-risk label and the filename (*file-type-B*) is the user ID. 
+Each *train_users*.json consists of { user_ID : { risk_level : Severe|Moderate|Low, timelines : [timeline_ID, ...] }. 
 
-We merged all the files and prepare a single CSV file containing both the informations in *file-type-A* and *file-type-B*. The following relational table structure shows how we prepared for the single CSV file merging all the information of *file-type-A* and *file-type-B*.
+We merged all the files and prepare a single comma delimited CSV file containing both the informations in *timeline_ID*.tsv and *train_users*.json. The following relational table structure shows how we prepared for the single CSV file.
 
 ```
 | Timeline_ID | User_ID | User_risk | Content | Post_ID | Post_label |
@@ -71,10 +88,10 @@ We merged all the files and prepare a single CSV file containing both the inform
 
 - *Timeline_ID*: This is the timeline ID of the sequence of posts by a user
 - *User_ID*: The user id of the above timeline.
-- *User_Risk*: It is the user risk label shared with all the timelines of the user above.
+- *User_Risk*: It is the user risk label shared with all the timelines of the user above (Severe|Moderate|Low).
 - *Content*: This is the total text merged with title and content for each user post.
 - *Post_ID*: It is the post id.
-- *Post_label*: It is the label of the post to indicate the moment of change.
+- *Post_label*: It is the label of the post to indicate the moment of change (0|IS|ES). IS = switch. ES = escalation.
 
 Save the training and testing sets as *training_dataset.csv* and *testing_dataset.csv* respectively.
 
@@ -82,34 +99,66 @@ Save the training and testing sets as *training_dataset.csv* and *testing_datase
 There are two types of sentence embedding methods considered for this study (Please refer to the paper for detail explaination):
 + *sent_emb*: fastText + SBERT 
 + *sent_score_emb*: fastText + SBERT + Task-specific scores
-+ 
+
 ##  Training Models
 ```
-python CLPsych-multitask_text.py --attention_layer 0 --load_classes <training_classes_index>.pkl --training_dataset <training_dataset>.csv --testing_dataset <testing_dataset>.csv --result_dir <save_directory> --save_model 0
+cd <uos_clpsych_dir>
+mkdir results
+mkdir model
+
+# train Multitask (use nohup to run in background as training can take a few hours)
+nohup python codes/CLPsych-multitask_text.py --attention_layer 0 --load_classes dataset/training_classes_index.pkl --training_dataset dataset/training_dataset.csv --testing_dataset dataset/testing_dataset.csv --result_dir results/ --save_model 1 > train_stdout.txt &
+
+# train Multitask-attn
+nohup python codes/CLPsych-multitask_text.py --attention_layer 1 --load_classes dataset/training_classes_index.pkl --training_dataset dataset/training_dataset.csv --testing_dataset dataset/testing_dataset.csv --result_dir results/ --save_model 1 > train_stdout.txt &
+
+# train Multitask-score
+nohup python codes/CLPsych-multitask_text-score.py --attention_layer 0 --load_classes dataset/training_classes_index.pkl --training_dataset dataset/training_dataset.csv --testing_dataset dataset/testing_dataset.csv --result_dir results/ --save_model 1 > train_stdout.txt &
+
+# train Multitask-attn-score
+nohup python codes/CLPsych-multitask_text-score.py --attention_layer 1 --load_classes dataset/training_classes_index.pkl --training_dataset dataset/training_dataset.csv --testing_dataset dataset/testing_dataset.csv --result_dir results/ --save_model 1 > train_stdout.txt &
 ```
 + *attention_layer*: Flag to define whether the model to be trained is with (1) or without (0) attention layer.
-+ *load_classes*: Location to load or save the training class indices.
-+ *training_dataset*: Location of the training dataset.
-+ *testing_dataset*: Location of the testing dataset.
++ *load_classes*: Location to load or save the pickle of training class indices.
++ *training_dataset*: Location of the training dataset file.
++ *testing_dataset*: Location of the testing dataset file.
 + *result_dir*: Location to save the model predicted results.
 + *save_model*: Flag to save model yes (1) or not (0).
 
-
 ## Testing Models
-
 ```
-python CLPsych-multitask_text_testing.py --attention_layer 0 --load_classes <training_classes_index>.pkl --testing_dataset <testing_dataset>.csv --result_dir <save_directory>
+# test Multitask
+python codes/CLPsych-multitask_text_testing.py --attention_layer 0 --load_classes dataset/training_classes_index.pkl --testing_dataset dataset/testing_dataset.csv --result_dir results/
+
+# test Multitask-attn
+python codes/CLPsych-multitask_text_testing.py --attention_layer 1 --load_classes dataset/training_classes_index.pkl --testing_dataset dataset/testing_dataset.csv --result_dir results/
+
+# test Multitask-score
+python codes/CLPsych-multitask_text_testing_score.py --attention_layer 0 --load_classes dataset/training_classes_index.pkl --testing_dataset dataset/testing_dataset.csv --result_dir results/
+
+# test Multitask-attn-score
+python codes/CLPsych-multitask_text_testing_score.py --attention_layer 1 --load_classes dataset/training_classes_index.pkl --testing_dataset dataset/testing_dataset.csv --result_dir results/
 ```
-
-
-##  Classification Models
 + *Multitask*: model using *sent_emb* 
 + *Multitask-score*: model using *sent_score_emb* 
 + *Multitask-attn*: model with attention layer using *sent_emb*
 + *Multitask-attn-score*: model with attention layer using *sent_score_emb*. 
 
-##  Shared Task 2022 Validation Set Result
+## Evaluating models on Shared Task 2022 Validation Set Results (run by our team locally)
+```
+# task a
+py codes/evaluate.py results/training_dataset_multitask-taska-with_attention.csv no
+py codes/evaluate.py results/training_dataset_multitask-taska-without_attention.csv no
+py codes/evaluate.py results/training_dataset_multitask-score-taska-without_attention.csv no
+py codes/evaluate.py results/training_dataset_multitask-score-taska-with_attention.csv no
 
+# task b
+py codes/evaluate.py results/training_dataset_multitask-taskb-with_attention.csv yes
+py codes/evaluate.py results/training_dataset_multitask-taskb-without_attention.csv yes
+py codes/evaluate.py results/training_dataset_multitask-score-taskb-without_attention.csv yes
+py codes/evaluate.py results/training_dataset_multitask-score-taskb-with_attention.csv yes
+
+```
 **Task A: Moments of Change**
 | Model | Precision | Recall | F1 |
 | ----- | --------- | ------ | -- |
@@ -117,8 +166,6 @@ python CLPsych-multitask_text_testing.py --attention_layer 0 --load_classes <tra
 | *Multitask-attn*	| 0.663	| 0.697	| 0.676	| 
 | *Multitask-score*	| 0.680	| 0.760	| 0.713	| 
 | *Multitask-attn-score*	| 0.674	| 0.800	| 0.724	| 
-
-
 
 **Task B: Suicidal Risk Levels**
 | Model | Precision | Recall | F1 |
@@ -128,8 +175,7 @@ python CLPsych-multitask_text_testing.py --attention_layer 0 --load_classes <tra
 | *Multitask-score*	|  0.355	| 0.331	| 0.334	| 
 | *Multitask-attn-score*	| 0.415	| 0.397	| 0.382	| 
 
-## Shared Task 2022 Test Set Result
-
+## Evaluating models on Shared Task 2022 Test Set Results (run by CLPsych-2022 organisers on our behalf using hidden test labels)
 **Post-level metrics (Task-A)**   (table)
 | Model | Precision | Recall | F1 |
 | ----- | --------- | ------ | -- |
