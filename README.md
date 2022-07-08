@@ -143,15 +143,15 @@ python codes/CLPsych-multitask_text_testing_score.py --attention_layer 1 --load_
 + *Multitask-attn*: model with attention layer using *sent_emb*
 + *Multitask-attn-score*: model with attention layer using *sent_score_emb*. 
 
-## Evaluating models on Shared Task 2022 Validation Set Results (run by our team locally)
+## Evaluating models on Shared Task 2022 (run by our team locally)
 ```
-# task a
+# eval script for task a (using trainingset here but you should provide a validation or test set)
 py codes/evaluate.py results/training_dataset_multitask-taska-with_attention.csv no
 py codes/evaluate.py results/training_dataset_multitask-taska-without_attention.csv no
 py codes/evaluate.py results/training_dataset_multitask-score-taska-without_attention.csv no
 py codes/evaluate.py results/training_dataset_multitask-score-taska-with_attention.csv no
 
-# task b
+# eval script for task b (using trainingset here but you should provide a validation or test set)
 py codes/evaluate.py results/training_dataset_multitask-taskb-with_attention.csv yes
 py codes/evaluate.py results/training_dataset_multitask-taskb-without_attention.csv yes
 py codes/evaluate.py results/training_dataset_multitask-score-taskb-without_attention.csv yes

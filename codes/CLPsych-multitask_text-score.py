@@ -339,8 +339,9 @@ if save_model=='1':
 
 
 '''
-Evaluating the model performance on the seen data
+Evaluating the model performance on the seen data (validation split - last 20% of x_train for a 0.2 val split)
 '''
+
 result = model.predict(x_train)
 
 user = []
