@@ -323,7 +323,7 @@ for si,sess in enumerate(sentences):
 taska_pd = pd.DataFrame({'User': user, 'Timeline': time_line, 'Postid': post_id, 'Pred_Label': pred_label, 'True_label': true_label})
 
 if save_model=='1':
-    taska_pd.to_csv(result_save_loc+'training_dataset_multitask-score-taska-'+model_type+'.csv', index=False)
+    taska_pd.to_csv(result_save_loc+'training_dataset_multitask-taska-'+model_type+'.csv', index=False)
 
 taskb_pd = pd.DataFrame({'UserID': user_b, 'Pred_Label': pred_b, 'True_label': label_b})
 
@@ -364,7 +364,7 @@ for i in grouped:
 taskb_pd_grouped = pd.DataFrame({'UserID': user_bi, 'Pred_Label': pred_bi, 'Sorted_pred_label': sorted_p_bi, 'True_label': true_bi})
 
 if save_model=='1':
-    taskb_pd_grouped.to_csv(result_save_loc+'training_dataset_multitask-score-taskb-'+model_type+'.csv', index=False)
+    taskb_pd_grouped.to_csv(result_save_loc+'training_dataset_multitask-taskb-'+model_type+'.csv', index=False)
 
 
 

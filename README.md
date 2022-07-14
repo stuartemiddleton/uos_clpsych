@@ -146,16 +146,16 @@ python codes/CLPsych-multitask_text_testing_score.py --attention_layer 1 --load_
 ## Evaluating models on Shared Task 2022 (run by our team locally)
 ```
 # eval script for task a (using trainingset here but you should provide a validation or test set)
-py codes/evaluate.py results/training_dataset_multitask-taska-with_attention.csv no
-py codes/evaluate.py results/training_dataset_multitask-taska-without_attention.csv no
-py codes/evaluate.py results/training_dataset_multitask-score-taska-without_attention.csv no
-py codes/evaluate.py results/training_dataset_multitask-score-taska-with_attention.csv no
+python codes/evaluate.py results/training_dataset_multitask-taska-with_attention.csv no
+python codes/evaluate.py results/training_dataset_multitask-taska-without_attention.csv no
+python codes/evaluate.py results/training_dataset_multitask-score-taska-without_attention.csv no
+python codes/evaluate.py results/training_dataset_multitask-score-taska-with_attention.csv no
 
 # eval script for task b (using trainingset here but you should provide a validation or test set)
-py codes/evaluate.py results/training_dataset_multitask-taskb-with_attention.csv yes
-py codes/evaluate.py results/training_dataset_multitask-taskb-without_attention.csv yes
-py codes/evaluate.py results/training_dataset_multitask-score-taskb-without_attention.csv yes
-py codes/evaluate.py results/training_dataset_multitask-score-taskb-with_attention.csv yes
+python codes/evaluate.py results/training_dataset_multitask-taskb-with_attention.csv yes
+python codes/evaluate.py results/training_dataset_multitask-taskb-without_attention.csv yes
+python codes/evaluate.py results/training_dataset_multitask-score-taskb-without_attention.csv yes
+python codes/evaluate.py results/training_dataset_multitask-score-taskb-with_attention.csv yes
 
 ```
 **Task A: Moments of Change**
