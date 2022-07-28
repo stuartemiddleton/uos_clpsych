@@ -4,9 +4,9 @@ This work describes the classification system proposed for the Computational Lin
 
 This work is part of the UKRI TAS Hub SafeSpacesNLP project https://www.tas.ac.uk/safespacesnlp/ and supported by the Engineering and Physical Sciences Research Council (EP/V00784X/1). If you use any of the resources in this repository, please cite it as:
 
-Tayyaba Azim, Loitongbam Gyanendro Singh, Stuart E. Middleton,
-__*Detecting Moments of Change and Suicidal Risks in Longitudinal User Texts Using Multi-task Learning*__,
-CLPsych-2022 @ NAACL, July 10–15, 2022.
+
+
+Tayyaba Azim, Loitongbam Singh, and Stuart Middleton. 2022.__*Detecting Moments of Change and Suicidal Risks in Longitudinal User Texts Using Multi-task Learning*__. In Proceedings of the Eighth Workshop on Computational Linguistics and Clinical Psychology, pages 213–218, Seattle, USA. Association for Computational Linguistics.
 ```
 @inproceedings{DBLP:conf/acl-clpsych/Azim2022,
   author    = {Tayyaba Azim and
@@ -17,11 +17,11 @@ CLPsych-2022 @ NAACL, July 10–15, 2022.
   booktitle = {Proceedings of the Eight Workshop on Computational Linguistics and
                Clinical Psychology: : Mental Health in the Face of Change, CLPsych@NAACL
                Hybrid: Online+ Seattle, Washington, July 10–15, 2022 },
-  pages     = {xx-xx},
+  pages     = {213-218},
   publisher = {Association for Computational Linguistics},
   year      = {2022},
-  url       = {https://doi.org/10.xxxxxxx/v1/wxy-xxxx},
-  doi       = {10.1xxxxxxxxxx/v1/w18-xxxxxxxxx},
+  url       = {https://aclanthology.org/2022.clpsych-1.19},
+  doi       = {-},
   timestamp = {Fri, 06 Aug 2021 01:00:00 +0200},
   biburl    = {https://dblp.org/rec/conf/acl-clpsych/Azim2022.bib},
   bibsource = {dblp computer science bibliography, https://dblp.org}
