@@ -194,10 +194,10 @@ else:
     f_out.close()
 
 
-from keras.preprocessing.sequence import pad_sequences
+from keras_preprocessing.sequence import pad_sequences
 from tensorflow.keras.utils import to_categorical
-from keras.models import Model, Input
-from keras.layers import LSTM, Embedding, Dense, TimeDistributed, Dropout, Bidirectional, GlobalAveragePooling1D, GlobalMaxPooling1D, Activation, Flatten
+from keras.models import Model
+from keras.layers import LSTM, Embedding, Dense, TimeDistributed, Dropout, Bidirectional, GlobalAveragePooling1D, GlobalMaxPooling1D, Activation, Flatten, Input
 from keras.layers import Attention, MultiHeadAttention
 
 X = [[post2idx[w[0]] for w in s] for s in sentences]
@@ -339,8 +339,9 @@ if save_model=='1':
 
 
 '''
-Evaluating the model performance on the seen data
+Evaluating the model performance on the seen data (validation split - last 20% of x_train for a 0.2 val split)
 '''
+
 result = model.predict(x_train)
 
 user = []

@@ -17,10 +17,10 @@ import gensim
 import nltk
 from nltk.corpus import stopwords
 import sys
-from keras.preprocessing.sequence import pad_sequences
+from keras_preprocessing.sequence import pad_sequences
 from tensorflow.keras.utils import to_categorical
-from keras.models import Model, Input
-from keras.layers import LSTM, Embedding, Dense, TimeDistributed, Dropout, Bidirectional, GlobalAveragePooling1D, GlobalMaxPooling1D, Activation, Flatten
+from keras.models import Model
+from keras.layers import LSTM, Embedding, Dense, TimeDistributed, Dropout, Bidirectional, GlobalAveragePooling1D, GlobalMaxPooling1D, Activation, Flatten, Input
 from keras.layers import Attention, MultiHeadAttention
 from keras.models import model_from_json
 import pickle
@@ -136,7 +136,7 @@ wdim = (wv_model['word'].shape)[0]
 wdim = wdim+embeddings.shape[1]
 sentence_emb = np.zeros(wdim)+9
 
-
+print('loading test data')
 
 data = pd.read_csv(testing_dataset)
 data = data.fillna(method="ffill")
@@ -173,6 +173,8 @@ for sess in X:
     XXt.append(ses_pos)
 
 XXt = np.asarray(XXt)
+
+print('running model to predict')
 
 result = model.predict(XXt)
 
