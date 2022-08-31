@@ -209,7 +209,7 @@ def multitask_with_attention(input,n_tags,n_labels,lstmunits=100):
 
     out2 = Flatten()(output_tensor)
     out2 = Dropout(0.1)(out2)
-    out2 = Dense(n_labels,activation='softmax', name="dense_2")(out2)  # softmax output layer task1
+    out2 = Dense(n_labels,activation='softmax', name="dense_2")(out2)  # softmax output layer task2
 
     if n_tags <= 2:
         loss1 = "binary_crossentropy"
